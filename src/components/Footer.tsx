@@ -66,16 +66,7 @@ export default function Footer() {
                     Paper
                   </Link>
                 </li>
-                <li>
-                  <Link href="/team" className="text-sm text-gray-600 hover:text-primary transition-colors" style={{fontFamily: 'var(--font-gotham)', fontWeight: 300}}>
-                    Team
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/gallery" className="text-sm text-gray-600 hover:text-primary transition-colors" style={{fontFamily: 'var(--font-gotham)', fontWeight: 300}}>
-                    Gallery
-                  </Link>
-                </li>
+          
               </ul>
             </div>
             
@@ -94,15 +85,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/download" className="text-sm text-gray-600 hover:text-primary transition-colors" style={{fontFamily: 'var(--font-gotham)', fontWeight: 300}}>
+                  <Link href="https://github.com/mattenarle10/neurowarn" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-primary transition-colors" style={{fontFamily: 'var(--font-gotham)', fontWeight: 300}}>
                     Software Package
                   </Link>
                 </li>
-                <li>
-                  <Link href="/faq" className="text-sm text-gray-600 hover:text-primary transition-colors" style={{fontFamily: 'var(--font-gotham)', fontWeight: 300}}>
-                    FAQ
-                  </Link>
-                </li>
+          
               </ul>
             </div>
             
@@ -128,51 +115,41 @@ export default function Footer() {
                     Philippines
                   </span>
                 </li>
+                <li className="flex items-start mt-4">
+                  <div className="flex space-x-4 items-center">
+                    <div className="relative h-10 w-10">
+                      <Link href="https://www.wvsu.edu.ph/" target="_blank" rel="noopener noreferrer">
+                        <Image
+                          src="/images/logo-school.png"
+                          alt="West Visayas State University"
+                          fill
+                          className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+                        />
+                      </Link>
+                    </div>
+                    <div className="relative h-10 w-10">
+                      <Link href="https://www.wvsu.edu.ph/academics/college-of-information-and-communications-technology/" target="_blank" rel="noopener noreferrer">
+                        <Image
+                          src="/images/logo-cict.png"
+                          alt="College of Information and Communications Technology"
+                          fill
+                          className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
           
           {/* Copyright and Logos */}
           <div className="border-t border-gray-200 mt-8 pt-6">
-            <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+            <div className="flex flex-col md:flex-row justify-center items-center">
               <p className="text-xs text-gray-500 mb-4 md:mb-0" style={{fontFamily: 'var(--font-gotham)', fontWeight: 300}}>
                 &copy; {currentYear} Neurowarn. All rights reserved.
               </p>
-              <div className="flex space-x-6">
-                <Link href="/privacy" className="text-xs text-gray-500 hover:text-primary transition-colors" style={{fontFamily: 'var(--font-gotham)', fontWeight: 300}}>
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" className="text-xs text-gray-500 hover:text-primary transition-colors" style={{fontFamily: 'var(--font-gotham)', fontWeight: 300}}>
-                  Terms of Service
-                </Link>
-                <Link href="/cookies" className="text-xs text-gray-500 hover:text-primary transition-colors" style={{fontFamily: 'var(--font-gotham)', fontWeight: 300}}>
-                  Cookie Policy
-                </Link>
-              </div>
-            </div>
-            
-            {/* School and CICT Logos */}
-            <div className="flex justify-center space-x-6 mt-4">
-              <div className="relative h-12 w-12">
-                <Link href="https://www.wvsu.edu.ph/" target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src="/logos/logo-school.png"
-                    alt="West Visayas State University"
-                    fill
-                    className="object-contain opacity-60 hover:opacity-100 transition-opacity"
-                  />
-                </Link>
-              </div>
-              <div className="relative h-12 w-12">
-                <Link href="https://www.wvsu.edu.ph/academics/college-of-information-and-communications-technology/" target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src="/logos/logo-cict.png"
-                    alt="College of Information and Communications Technology"
-                    fill
-                    className="object-contain opacity-60 hover:opacity-100 transition-opacity"
-                  />
-                </Link>
-              </div>
+      
             </div>
           </div>
         </div>

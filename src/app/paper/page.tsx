@@ -2,8 +2,6 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function PaperPage() {
@@ -30,23 +28,23 @@ export default function PaperPage() {
       <Navbar />
       
       <div className="container mx-auto px-4 pb-20">
-        {/* Header Section */}
+        {/* Header Section - reduced spacing */}
         <div className="max-w-5xl mx-auto">
-          <div className="text-center pt-32 pb-12">
+          <div className="text-center pt-20 pb-8">
             <h1 
-              className="text-3xl md:text-4xl font-bold text-gray-700 mb-3" 
+              className="text-3xl md:text-4xl font-bold text-gray-700 mb-2" 
               style={{fontFamily: 'var(--font-gotham)', letterSpacing: '-0.02em'}}
             >
               Our Paper
             </h1>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-4"></div>
           </div>
           
           {/* PDF Viewer Section */}
           <div className="mb-20">
-            {/* Tab Buttons */}
+            {/* Tab Buttons - aligned left */}
             <div className="mb-8">
-              <div className="flex w-full max-w-sm mx-auto relative border-b border-gray-200">
+              <div className="flex max-w-sm relative border-b border-gray-200">
                 <button
                   onClick={() => handleTabChange('paper')}
                   className={`py-3 px-6 text-sm font-medium transition-colors relative ${

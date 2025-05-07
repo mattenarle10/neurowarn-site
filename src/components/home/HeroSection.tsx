@@ -1,19 +1,8 @@
 "use client";
-import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { CarouselSlide, FloatingElementProps } from '@/types/carousel';
 import Carousel3D from '../carousel/Carousel3D';
 import FloatingElement from '../carousel/FloatingElement';
-
-// Animation variants for different elements
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.6 }
-  }
-};
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -50,9 +39,7 @@ export default function Hero() {
 
   // Generate random positions for floating elements
   const floatingElements: FloatingElementProps[] = [];
-  if (mounted) {
-    const types = ['arrow', 'neuron', 'wave'] as const;
-    
+  if (mounted) {    
     // Create more arrows specifically
     for (let i = 0; i < 8; i++) {
       floatingElements.push({

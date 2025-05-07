@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import Link from 'next/link';
+
 
 export default function AboutSection() {
   return (
@@ -96,7 +96,7 @@ export default function AboutSection() {
                   className="text-gray-700 leading-relaxed mb-3 text-sm" 
                   style={{fontFamily: 'var(--font-gotham)', fontWeight: 300}}
                 >
-                  The system's effectiveness and usability were rigorously evaluated using the ISO 9241-11 standard with high user satisfaction and system performance.
+                  The system&apos;s effectiveness and usability were rigorously evaluated using the ISO 9241-11 standard with high user satisfaction and system performance.
                 </p>
                 
                 {/* Metrics */}
