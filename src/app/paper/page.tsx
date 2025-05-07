@@ -32,7 +32,6 @@ export default function PaperPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center pt-20 pb-8">
   
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-4"></div>
           </div>
           
           {/* PDF Viewer Section */}
