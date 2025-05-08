@@ -1,7 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import { FloatingElementProps } from '@/types/carousel';
-import { useEffect, useState } from 'react';
+
 
 // Brain-themed floating elements
 export default function FloatingElement({ 
