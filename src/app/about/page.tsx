@@ -32,14 +32,12 @@ export default function AboutPage() {
       linkedin: "jasper-nillos",
       image: "/images/team/jasper_avatar.jpeg",
     },
-
     {
       name: "Shayne B. Yanson",
       email: "shayne.yanson@gmail.com",
       linkedin: "shayneyanson",
       image: "/images/team/shayne_avatar.jpeg",
     },
-
   ];
 
   const relatedPosts = [
@@ -71,15 +69,12 @@ export default function AboutPage() {
       <Navbar />
       
       {/* Team Section with Space for Navbar */}
-      <section className="pt-32 pb-12 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-12 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-
-         
-              
-              {/* Team Photo - More vertical */}
-              <div className="relative w-full max-w-2xl h-[550px] mx-auto mb-12 rounded-xl overflow-hidden shadow-md border border-gray-200">
+            <div className="text-center mb-8 sm:mb-12">
+              {/* Team Photo - Responsive height */}
+              <div className="relative w-full max-w-2xl h-[350px] sm:h-[450px] md:h-[550px] mx-auto mb-8 sm:mb-12 rounded-xl overflow-hidden shadow-md border border-gray-200">
                 <Image 
                   src="/images/team_neuro.jpg" 
                   alt="Neurowarn Team" 
@@ -88,19 +83,16 @@ export default function AboutPage() {
                 />
               </div>
               <h1 
-                className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-3" 
+                className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-2 sm:mb-3" 
                 style={{fontFamily: 'var(--font-gotham)', letterSpacing: '-0.02em'}}
               >
                 Our Team
               </h1>
-              <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-8"></div>
+              <div className="w-12 sm:w-16 h-1 bg-primary mx-auto rounded-full mb-6 sm:mb-8"></div>
             </div>
-
             
-            
-            {/* Team Members in 3-2 layout */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              
+            {/* Team Members in 3-2 layout - Responsive grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
               {teamMembers.slice(0, 3).map((member, index) => (
                 <TeamMember 
                   key={index}
@@ -112,8 +104,8 @@ export default function AboutPage() {
               ))}
               
               {/* Bottom row with 2 members centered */}
-              <div className="col-span-3 flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-md">
+              <div className="col-span-1 sm:col-span-2 md:col-span-3 flex justify-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-md">
                   {teamMembers.slice(3, 5).map((member, index) => (
                     <TeamMember 
                       key={index}
@@ -131,18 +123,17 @@ export default function AboutPage() {
       </section>
       
       {/* Related Posts Section with Notion-like list tiles */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-10 sm:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8 sm:mb-12">
               <h2 
-                className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-3" 
+                className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-2 sm:mb-3" 
                 style={{fontFamily: 'var(--font-gotham)', letterSpacing: '-0.02em'}}
               >
                 Related Posts
               </h2>
-              <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-8"></div>
-
+              <div className="w-12 sm:w-16 h-1 bg-primary mx-auto rounded-full mb-6 sm:mb-8"></div>
             </div>
             
             <div className="max-w-4xl mx-auto">
