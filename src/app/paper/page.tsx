@@ -95,30 +95,32 @@ export default function PaperPage() {
               </div>
               
               {/* Document Info Panel */}
-              <div className="bg-gray-50 rounded-xl p-5 sm:p-7 flex flex-col justify-between border border-gray-200 shadow-md h-auto lg:h-[600px]">
+              <div className="bg-gradient-to-br from-gray-50 to-gray-50/80 backdrop-blur-sm rounded-xl p-5 sm:p-7 flex flex-col justify-between border border-gray-200 shadow-md h-auto lg:h-[600px] group hover:shadow-lg transition-shadow duration-300">
                 <div>
                   <h2 
-                    className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-800"
+                    className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-800 group-hover:text-gray-900 transition-colors"
                     style={{fontFamily: 'var(--font-gotham)', letterSpacing: '-0.02em'}}
                   >
                     {activeTab === 'paper' ? 'Research Paper' : 'User Manual'}
                   </h2>
                   
-                  <div className="flex items-center text-xs sm:text-sm text-gray-500 mb-4 sm:mb-5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-xs sm:text-sm text-gray-700 mb-4 sm:mb-5 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <span>{activeTab === 'paper' ? '14 MB PDF' : '20 MB PDF'}</span>
+                    <span style={{fontFamily: 'var(--font-gotham)', fontWeight: 500}}>{activeTab === 'paper' ? '14 MB PDF' : '20 MB PDF'}</span>
                   </div>
                   
-                  <p 
-                    className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8"
-                    style={{fontFamily: 'var(--font-gotham)', fontWeight: 300}}
-                  >
-                    {activeTab === 'paper' 
-                      ? 'Comprehensive research on Neurowarn, including methodology, results, and discussions on safety enhancement for EEG-controlled wheelchairs.' 
-                      : 'Complete guide for users and caregivers on how to set up, operate, and maintain the Neurowarn system safely.'}
-                  </p>
+                  <div className="mb-6 sm:mb-8 bg-white/60 rounded-lg p-4 border border-gray-100">
+                    <p 
+                      className="text-sm sm:text-base text-gray-700 leading-relaxed"
+                      style={{fontFamily: 'var(--font-gotham)', fontWeight: 300}}
+                    >
+                      {activeTab === 'paper' 
+                        ? 'Comprehensive research on Neurowarn, including methodology, results, and discussions on safety enhancement for EEG-controlled wheelchairs.' 
+                        : 'Complete guide for users and caregivers on how to set up, operate, and maintain the Neurowarn system safely.'}
+                    </p>
+                  </div>
                 </div>
                 
                 <div className="space-y-3 sm:space-y-4 mt-auto">
@@ -126,7 +128,11 @@ export default function PaperPage() {
                     href={activeTab === 'paper' ? "/pdf/NeurowarnBCI.pdf" : "/pdf/NeurowarnUserManual.pdf"} 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-full ${activeTab === 'paper' ? 'bg-primary hover:bg-primary/90' : 'bg-blue-600 hover:bg-blue-700'} text-white rounded-lg font-medium py-2.5 sm:py-3.5 flex items-center justify-center transition-colors shadow-sm text-sm sm:text-base`}
+                    className={`w-full ${
+                      activeTab === 'paper' 
+                        ? 'bg-primary hover:bg-primary/90' 
+                        : 'bg-blue-600 hover:bg-blue-700'
+                    } text-white rounded-lg font-medium py-3 sm:py-3.5 flex items-center justify-center transition-all shadow-sm hover:shadow text-sm sm:text-base transform hover:-translate-y-0.5 duration-200`}
                     style={{fontFamily: 'var(--font-gotham)'}}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -139,10 +145,10 @@ export default function PaperPage() {
                   <a 
                     href={activeTab === 'paper' ? "/pdf/NeurowarnBCI.pdf" : "/pdf/NeurowarnUserManual.pdf"} 
                     download={activeTab === 'paper' ? "Neurowarn_Research_Paper.pdf" : "Neurowarn_User_Manual.pdf"}
-                    className="w-full bg-white border border-gray-200 text-gray-800 rounded-lg font-medium py-2.5 sm:py-3.5 flex items-center justify-center hover:bg-gray-50 transition-colors shadow-sm text-sm sm:text-base"
+                    className="w-full bg-white border border-gray-200 text-gray-800 rounded-lg font-medium py-3 sm:py-3.5 flex items-center justify-center hover:bg-gray-50 transition-all shadow-sm hover:shadow hover:border-gray-300 text-sm sm:text-base transform hover:-translate-y-0.5 duration-200"
                     style={{fontFamily: 'var(--font-gotham)'}}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
                     Download

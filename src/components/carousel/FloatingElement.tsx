@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import { FloatingElementProps } from '@/types/carousel';
+import { useEffect, useState } from 'react';
 
 // Brain-themed floating elements
 export default function FloatingElement({ 
@@ -12,23 +13,52 @@ export default function FloatingElement({
   duration, 
   rotation, 
   type, 
-  opacity 
+  opacity,
+  interactive = false,
+  mousePosition = { x: 0.5, y: 0.5 }
 }: FloatingElementProps) {
+  // Calculate parallax movement if element is interactive
+  const getParallaxValues = () => {
+    if (!interactive) return { x, y, rotate: rotation };
+    
+    // Adjust element position based on mouse movement
+    const moveFactorX = 15; // Maximum movement in pixels
+    const moveFactorY = 15;
+    const rotateOffset = 5; // Maximum rotation change in degrees
+    
+    // Convert from 0-1 range to -1 to 1 range for centered movement
+    const normalizedX = (mousePosition.x - 0.5) * 2;
+    const normalizedY = (mousePosition.y - 0.5) * 2;
+    
+    return {
+      x: x - (normalizedX * moveFactorX),
+      y: y - (normalizedY * moveFactorY),
+      rotate: rotation - (normalizedX * rotateOffset)
+    };
+  };
+  
+  const { x: parallaxX, y: parallaxY, rotate: parallaxRotation } = getParallaxValues();
+
   return (
     <motion.div
       className="absolute"
       style={{
-        x, y,
         opacity,
-        transform: `rotate(${rotation}deg)`,
       }}
       animate={{
-        y: [y, y - 20, y],
-        x: [x, x + 5, x],
-        rotate: [rotation, rotation + 5, rotation],
+        y: interactive 
+          ? [parallaxY, parallaxY - 8, parallaxY]
+          : [y, y - 20, y],
+        x: interactive 
+          ? [parallaxX, parallaxX + 3, parallaxX]
+          : [x, x + 5, x],
+        rotate: interactive 
+          ? [parallaxRotation, parallaxRotation + 3, parallaxRotation]
+          : [rotation, rotation + 5, rotation],
+        scale: interactive && (type === 'arrow') ? [1, 1.05, 1] : 1,
       }}
       transition={{
-        duration,
+        duration: interactive ? duration * 0.7 : duration,
         repeat: Infinity,
         repeatType: "reverse",
         delay,

@@ -17,4 +17,6 @@ export interface FloatingElementProps {
   id: number;
   type: 'arrow' | 'neuron' | 'wave';
   opacity: number;
+  interactive?: boolean;
+  mousePosition?: { x: number; y: number };
 }
