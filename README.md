@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Neurowarn Website
+
+## About The Project
+
+This repository contains the source code for the official website of **Neurowarn**, a research project dedicated to enhancing safety in EEG-controlled wheelchairs. The system leverages a Recurrent Neural Network (RNN) to predict potential hazards from sensor data and provide timely warnings, creating a safer and more reliable mobility experience for users with severe motor disabilities.
+
+This website serves as a central hub for information about the project, showcasing the technology, the research findings, and the team behind it.
+
+## Key Features
+
+*   **Modern Tech Stack:** Built with **Next.js 15**, **React 19**, and **TypeScript** for a fast, modern, and type-safe web experience.
+*   **Interactive UI:** Features a dynamic 3D carousel on the homepage to showcase project components, animated with **Framer Motion**.
+*   **Responsive Design:** Styled with **Tailwind CSS** for a fully responsive and accessible interface that looks great on all devices.
+*   **Integrated Document Viewer:** Includes an embedded PDF viewer to read the full research paper and user manual directly on the site, with options to download or open in a new tab.
+*   **Detailed Content Pages:**
+    *   **Home:** An engaging landing page with a project overview, key performance metrics (94% accuracy, 4.27/5 user satisfaction), and a promotional video.
+    *   **About:** Introduces the five-member team with contact information and links to related articles and social media posts.
+    *   **Paper:** Provides direct access to the research paper and user manual, along with special acknowledgments for contributors.
+
+## Built With
+
+*   **Framework:** [Next.js](https://nextjs.org/)
+*   **Library:** [React](https://react.dev/)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **Animation:** [Framer Motion](https://www.framer.com/motion/)
+*   **Deployment:** [Vercel](https://vercel.com/)
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+Ensure you have Node.js and a package manager (npm, yarn, or pnpm) installed on your machine.
+
+### Installation
+
+1.  Clone the repository:
+    ```sh
+    git clone https://github.com/mattenarle10/neurowarn-site.git
+    ```
+2.  Navigate to the project directory:
+    ```sh
+    cd neurowarn-site
+    ```
+3.  Install the required dependencies:
+    ```sh
+    npm install
+    ```
+
+### Running the Application
+
+To run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the website. The page will auto-update as you make edits to the source files.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+In the project directory, you can run the following commands:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*   `npm run dev`: Starts the application in development mode.
+*   `npm run build`: Creates a production-ready build of the application.
+*   `npm run start`: Starts a Next.js production server after a build has been created.
+*   `npm run lint`: Runs ESLint to analyze the code for potential errors and style issues.
